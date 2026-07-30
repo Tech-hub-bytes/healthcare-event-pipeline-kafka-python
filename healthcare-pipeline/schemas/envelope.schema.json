@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/healthcare/envelope.schema.json",
+  "title": "HealthcareEventEnvelope",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "event_id",
+    "event_type",
+    "occurred_at",
+    "source_system",
+    "patient_key",
+    "content_type",
+    "phi_level",
+    "trace_id"
+  ],
+  "properties": {
+    "event_id": { "type": "string", "minLength": 8 },
+    "event_type": { "type": "string", "minLength": 3 },
+    "occurred_at": { "type": "string", "minLength": 10 },
+    "source_system": { "type": "string" },
+    "patient_key": {
+      "type": "string",
+      "minLength": 8,
+      "pattern": "^[a-f0-9]{8,64}$",
+      "description": "Hashed patient key only — never MRN/name"
+    },
+    "patient_display": { "type": ["string", "null"] },
+    "content_type": { "type": "string" },
+    "payload": { "type": ["string", "object", "null"] },
+    "payload_ref": { "type": ["string", "null"] },
+    "phi_level": { "type": "string", "enum": ["restricted", "limited"] },
+    "trace_id": { "type": "string", "minLength": 8 },
+    "feed": { "type": ["string", "null"] },
+    "source_file": { "type": ["string", "null"] }
+  },
+  "not": {
+    "anyOf": [
+      { "required": ["ssn"] },
+      { "required": ["social_security_number"] }
+    ]
+  }
+}

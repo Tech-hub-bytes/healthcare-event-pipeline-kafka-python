@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/healthcare/normalized.schema.json",
+  "title": "ClinicalNormalizedEvent",
+  "type": "object",
+  "required": ["event_id", "event_type", "patient_key", "occurred_at", "feed"],
+  "properties": {
+    "event_id": { "type": "string" },
+    "trace_id": { "type": ["string", "null"] },
+    "event_type": { "type": "string" },
+    "feed": { "type": "string", "enum": ["ccda", "hl7", "fhir"] },
+    "patient_key": { "type": "string", "pattern": "^[a-f0-9]{8,64}$" },
+    "patient": { "type": ["string", "null"] },
+    "section_count": { "type": ["integer", "null"] },
+    "section_titles": { "type": ["array", "null"] },
+    "volume_path": { "type": ["string", "null"] },
+    "silver_dir": { "type": ["string", "null"] },
+    "bronze_path": { "type": ["string", "null"] },
+    "occurred_at": { "type": "string" },
+    "details": { "type": ["object", "null"] }
+  },
+  "additionalProperties": true
+}

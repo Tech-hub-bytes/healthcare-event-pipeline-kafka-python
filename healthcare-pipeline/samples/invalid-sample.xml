@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Intentionally invalid: not a ClinicalDocument, missing recordTarget -->
+<Note>
+  <title>Broken document</title>
+  <body>This should fail validation and land in DLQ.</body>
+</Note>

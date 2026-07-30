@@ -1,0 +1,13 @@
+# Optional TLS overlay (self-signed) — enable after scripts/generate-certs.ps1
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.tls.yml up -d
+#
+# Clients then use:
+#   KAFKA_BROKERS=localhost:9093
+#   KAFKA_SECURITY_PROTOCOL=SSL
+#   (and trust the generated CA)
+#
+# NOTE: apache/kafka image SSL secret mounting varies by version.
+# Prefer docker-compose.p5.yml (Schema Registry) for local hardening first.
+# Full mTLS is documented in healthcare-pipeline/docs/P5_HARDENING.md
+services: {}

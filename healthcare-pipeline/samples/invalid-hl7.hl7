@@ -1,0 +1,2 @@
+MSH|^~\&|HIS|HOSPITAL|PIPES|KAFKA|20260730120000||ORU^R01|BAD001|P|2.5
+OBX|1|ST|NOTE||This message has no PID and should fail validation

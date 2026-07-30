@@ -24,4 +24,4 @@ scripts\monitor.bat
 - Kafka UI: http://localhost:8088  
 - Health file: `landing\metrics\health.json`
 
-See `docs\P5_HARDENING.md` for TLS notes and env vars.
+See `docs\ARCHITECTURE.md` for flow/architecture detail, and `docs\P5_HARDENING.md` for TLS notes and env vars.

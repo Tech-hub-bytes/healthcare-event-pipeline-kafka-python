@@ -1,4 +1,4 @@
-﻿# Healthcare Event Pipeline (Kafka)
+﻿# Healthcare Event Pipeline — Kafka (Python)
 
 Multi-format clinical event pipeline: **C-CDA**, **HL7 ADT**, and **FHIR** → Kafka → validate/parse → bronze/silver/volume landing → optional Databricks + chatbot.
 
